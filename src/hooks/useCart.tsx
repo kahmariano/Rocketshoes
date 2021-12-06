@@ -113,6 +113,8 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         productExists.amount = amount
         setCart(updatedCart)
         localStorage.setItem('@RocketShoes:cart', JSON.stringify(updatedCart))
+      } else {
+        throw Error()
       }
     } catch {
       toast.error('Erro na alteração de quantidade do produto')
